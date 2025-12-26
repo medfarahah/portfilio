@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    --color-primary: 248, 250, 252;
+    /* Slate 50 */
+    --color-secondary: 226, 232, 240;
+    /* Slate 200 */
+    --color-accent: 139, 92, 246;
+    /* Violet 500 */
+    --color-accent-hover: 124, 58, 237;
+    /* Violet 600 */
+    --color-text: 15, 23, 42;
+    /* Slate 900 */
+    --color-text-muted: 100, 116, 139;
+    /* Slate 500 */
+  }
+
+  .dark {
+    --color-primary: 15, 23, 42;
+    /* Slate 900 */
+    --color-secondary: 30, 41, 59;
+    /* Slate 800 */
+    --color-accent: 139, 92, 246;
+    /* Violet 500 */
+    --color-accent-hover: 124, 58, 237;
+    /* Violet 600 */
+    --color-text: 248, 250, 252;
+    /* Slate 50 */
+    --color-text-muted: 148, 163, 184;
+    /* Slate 400 */
+  }
+
+  body {
+    @apply bg-primary text-text font-sans antialiased overflow-x-hidden selection:bg-accent selection:text-white transition-colors duration-300;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-accent/50 rounded-full hover:bg-accent;
+}

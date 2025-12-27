@@ -53,3 +53,93 @@
 ::-webkit-scrollbar-thumb {
   @apply bg-accent/50 rounded-full hover:bg-accent;
 }
+
+/* Snowman Animations */
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(300px) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes wobble {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+.snowflake {
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  animation: fall linear infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.snowman-container {
+  animation: wobble 3s ease-in-out infinite;
+}
+
+/* Full-Screen Snow Animation */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) translateX(50px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.snowflake-full {
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  animation: snowfall linear infinite;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  will-change: transform, opacity;
+}
+
+/* Djibouti Map Animation */
+@keyframes mapGlow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
+  }
+}
+
+.djibouti-map {
+  animation: mapGlow 2s ease-in-out infinite;
+}

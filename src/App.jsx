@@ -8,6 +8,8 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import PageLoader from './components/PageLoader';
 import CursorFollower from './components/CursorFollower';
+import SnowmanAnimation from './components/SnowmanAnimation';
+import SnowOverlay from './components/SnowOverlay';
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -21,6 +23,8 @@ function App() {
     <div className="bg-primary min-h-screen text-text cursor-none md:cursor-auto">
       <PageLoader />
       <CursorFollower />
+      <SnowmanAnimation />
+      <SnowOverlay />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-accent origin-left z-[60]"
         style={{ scaleX }}

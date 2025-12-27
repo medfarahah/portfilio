@@ -10,6 +10,7 @@ import PageLoader from './components/PageLoader';
 import CursorFollower from './components/CursorFollower';
 import SnowmanAnimation from './components/SnowmanAnimation';
 import SnowOverlay from './components/SnowOverlay';
+import NewYearCelebration from './components/NewYearCelebration';
 
 function App() {
   const { scrollYProgress } = useScroll();
@@ -25,6 +26,7 @@ function App() {
       <CursorFollower />
       <SnowmanAnimation />
       <SnowOverlay />
+      <NewYearCelebration />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-accent origin-left z-[60]"
         style={{ scaleX }}
@@ -39,6 +41,16 @@ function App() {
       </main>
       <footer className="bg-secondary py-6 text-center text-text-muted text-sm border-t border-white/5">
         <p>© 2024 MOHAMED FARAH. All rights reserved.</p>
+        <motion.div
+          className="mt-3 text-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.2 }}
+        >
+          🇩🇯
+        </motion.div>
       </footer>
     </div>
   );
